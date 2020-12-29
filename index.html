@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>kindle unlimited search</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- https://favicon.io/favicon-generator/ -->
+    <!-- Text: U, Background: Rounded, Font Family: Noto Sans, Font Size: 110, Font Color: #DDD, Background Color: #555 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <style type="text/css">
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      #form {
+        display: flex;
+        justify-content: space-between;
+        max-width: 720px;
+        min-width: 300px;
+        width: 75%;
+        height: 64px;
+        margin: 0 auto;
+        border: 1px solid #DDD;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      #words {
+        flex-basis: auto;
+        flex-shrink: 1;
+        width: 100%;
+        padding: 20px 0 20px 20px;
+        font-weight: 500;
+        border: none;
+      }
+
+      #submit {
+        width: 96px;
+        height: 64px;
+        padding: 0;
+        cursor: pointer;
+        color: #DDD;
+        font-weight: 600;
+        background-color: #222;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="container">
+      <main>
+        <form id="form" onsubmit="return search()">
+          <input type="search" id="words" autofocus>
+          <input type="submit" id="submit" value="search">
+        </form>
+      </main>
+    </article>
+
+    <script>
+      function search() {
+        const words = document.getElementById("words").value
+        const encoded = encodeURIComponent(words)
+        const url = `https://www.amazon.co.jp/s/ref=sr_nr_p_n_feature_nineteen_0?rh=n%3A2250738051%2Ck%3A${encoded}%2Cp_n_feature_nineteen_browse-bin%3A3169286051`
+        window.open(url)
+        return false
+      }
+    </script>
+  </body>
+</html>
