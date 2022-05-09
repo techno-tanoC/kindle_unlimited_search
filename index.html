@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>kindle unlimited search</title>
+    <title>Kindle Unlimited Search</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -13,25 +13,26 @@
     <link rel="manifest" href="favicons/site.webmanifest">
 
     <style type="text/css">
-      html, body {
+      html, body, article, main {
         height: 100%;
+        width: 100%;
         margin: 0;
         padding: 0;
       }
 
       .container {
-        width: 100%;
-        height: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
       }
 
-      main {
-        width: 100%;
+      .header {
+        margin: 10px auto;
+        font-weight: 200;
+        white-space: nowrap;
       }
 
-      #form {
+      .form {
         display: flex;
         justify-content: space-between;
         max-width: 720px;
@@ -44,7 +45,7 @@
         overflow: hidden;
       }
 
-      #words {
+      .words {
         flex-basis: auto;
         flex-shrink: 1;
         width: 100%;
@@ -54,7 +55,7 @@
         outline: none;
       }
 
-      #submit {
+      .submit {
         width: 96px;
         height: 64px;
         padding: 0;
@@ -67,11 +68,12 @@
     </style>
   </head>
   <body>
-    <article class="container">
-      <main>
-        <form id="form" onsubmit="return search()">
-          <input type="search" id="words" autofocus>
-          <input type="submit" id="submit" value="search">
+    <article>
+      <main class="container">
+        <h1 class="header">Kindle Unlimited Search</h1>
+        <form id="form" class="form" onsubmit="return search()">
+          <input type="search" id="words" class="words" autofocus>
+          <input type="submit" class="submit" value="search">
         </form>
       </main>
     </article>
